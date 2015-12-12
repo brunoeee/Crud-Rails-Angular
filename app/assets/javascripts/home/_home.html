@@ -1,0 +1,26 @@
+<div class="container">
+     <div class="page-header">
+        <h1>Todo List</h1>
+      </div>
+    <div class="row">
+	  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+	   <form ng-submit="addTodo()" role="form" class="form-inline" >
+         <input type="text" ng-model="newTodo" class="form-control input-lg"></input>
+         <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+       </form>
+		<hr/>
+	    <div ng-repeat="td in Todo">
+          <div class="row">
+		    <div class="col-lg-10 col-md-11">
+			  <a href="#/todos/{{td.id}}" class="thumb">
+                {{td.todo}}
+              </a>
+		    </div>
+		    <div class="col-lg-2 col-md-1">
+		        <button ng-click="delTodo(td.id)" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+		    </div>
+		  </div>
+	    </div>
+	  </div>
+    </div>
+</div>
